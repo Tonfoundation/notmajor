@@ -9,46 +9,46 @@ body {
     background-repeat: no-repeat;
     color: white;
     height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
 }
 
 /* Header text styles */
 .main-header {
-    margin-top: 20px; /* Adjusted for smaller screens */
-    font-size: 36px; /* Reduced size for mobile */
+    margin-top: 20px;
+    font-size: 48px; /* Restored original text size */
     font-weight: 700;
     text-align: center;
-    color: transparent; /* Makes the text itself transparent */
+    color: transparent; /* Transparent fill */
     text-shadow: 
-        0 0 5px rgba(255, 215, 0, 1), /* Outer glow effect */
+        0 0 5px rgba(255, 215, 0, 1), /* Glow effect */
         -1px 0 0 #FFD700, /* Left outline */
         0 1px 0 #FFD700, /* Top outline */
         1px 0 0 #FFD700, /* Right outline */
         0 -1px 0 #FFD700; /* Bottom outline */
-    background: linear-gradient(45deg, #857c48, #FF8C00); /* Same background color as buttons */
-    padding: 10px 15px; /* Reduced padding */
-    border-radius: 10px; /* Rounded edges for the background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for the text box */
-    display: inline-block; /* Shrinks the background to the text's size */
+    background: linear-gradient(45deg, #857c48, #FF8C00); /* Stroke-matching background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
 }
 
 /* Video container styles */
 .video-container {
-    margin-top: 10px; /* Reduced spacing for smaller screens */
+    margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .video-player {
-    width: 90%; /* Scales to fit the screen */
-    max-width: 500px; /* Prevents it from exceeding the desktop size */
-    height: auto; /* Maintains aspect ratio */
+    width: 400px; /* Fixed width */
+    height: 700px; /* Fixed height */
     border: 3px solid #FFD700;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
@@ -56,18 +56,19 @@ body {
 
 /* Button row styles */
 .button-row {
-    margin-top: 15px; /* Reduced spacing */
+    margin-top: 20px;
     display: flex;
-    gap: 10px; /* Reduced gap for smaller screens */
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 /* Play Button */
 .play-button {
-    width: 80px; /* Slightly smaller for mobile */
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(45deg, #FFD700, #FF8C00);
@@ -80,38 +81,37 @@ body {
 }
 
 .play-button:hover {
-    transform: scale(1.1); /* Scale from the center */
+    transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 1);
 }
 
 .play-button:active {
-    transform: scale(0.95); /* Scale from the center */
+    transform: scale(0.95);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 200, 0, 0.8);
 }
 
-/* Icon inside play button */
 .play-button img.button-icon {
-    width: 40px; /* Adjusted for smaller screens */
-    height: 40px;
+    width: 50%; /* Adjusts dynamically */
+    height: 50%;
 }
 
 /* Secondary buttons */
 .secondary-button {
-    width: 70px; /* Reduced size for mobile */
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(45deg, #FFD700, #FF8C00);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
     color: white;
-    font-size: 12px; /* Reduced font size */
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-decoration: none; /* Removes underline from links */
+    text-decoration: none;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -125,27 +125,27 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 200, 0, 0.8);
 }
 
-/* Media Query for Small Screens */
+/* Media Queries for smaller devices */
 @media (max-width: 768px) {
     .main-header {
-        font-size: 28px; /* Smaller font size for smaller devices */
+        font-size: 24px; /* Smaller header for smaller devices */
+        margin-top: 10px;
+    }
+
+    .video-player {
+        width: 90%; /* Scales to fit smaller screens */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 700px; /* Ensures video isn't too large */
     }
 
     .play-button {
-        width: 70px; /* Smaller button for mobile */
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
 
     .secondary-button {
-        width: 60px; /* Smaller secondary buttons */
+        width: 60px;
         height: 60px;
-    }
-
-    .video-container {
-        margin-top: 5px;
-    }
-
-    .button-row {
-        gap: 5px; /* Reduced gap */
+        font-size: 12px;
     }
 }
