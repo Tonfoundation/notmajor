@@ -8,47 +8,49 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    height: 100vh;
-    overflow: hidden; /* Prevent scrolling */
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between; /* Distributes elements evenly */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Header text styles */
 .main-header {
-    margin-top: 20px;
-    font-size: 48px; /* Restored original text size */
+    margin: 10px 0; /* Adjusted margin */
+    font-size: 48px; /* Restored original size */
     font-weight: 700;
     text-align: center;
-    color: transparent; /* Transparent fill */
+    color: transparent;
     text-shadow: 
-        0 0 5px rgba(255, 215, 0, 1), /* Glow effect */
-        -1px 0 0 #FFD700, /* Left outline */
-        0 1px 0 #FFD700, /* Top outline */
-        1px 0 0 #FFD700, /* Right outline */
-        0 -1px 0 #FFD700; /* Bottom outline */
-    background: linear-gradient(45deg, #857c48, #FF8C00); /* Stroke-matching background */
+        0 0 5px rgba(255, 215, 0, 1),
+        -1px 0 0 #FFD700,
+        0 1px 0 #FFD700,
+        1px 0 0 #FFD700,
+        0 -1px 0 #FFD700;
+    background: linear-gradient(45deg, #857c48, #FF8C00);
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
+    max-width: 90%; /* Prevents text overflow */
 }
 
 /* Video container styles */
 .video-container {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: auto;
+    width: 90%; /* Fits within the screen width */
+    height: 55vh; /* Dynamically takes up 55% of the viewport height */
 }
 
 .video-player {
-    width: 400px; /* Fixed width */
-    height: 700px; /* Fixed height */
+    width: auto; /* Adjusts width dynamically to maintain aspect ratio */
+    height: 100%; /* Fills the container height */
+    max-width: 400px; /* Prevents excessive width */
+    max-height: 700px; /* Prevents excessive height */
     border: 3px solid #FFD700;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
@@ -56,13 +58,13 @@ body {
 
 /* Button row styles */
 .button-row {
-    margin-top: 20px;
+    margin: 10px 0; /* Adjusted margin */
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
+    width: 100%; /* Ensures buttons are centered and visible */
+    flex-wrap: wrap; /* Wraps buttons if needed */
 }
 
 /* Play Button */
@@ -91,7 +93,7 @@ body {
 }
 
 .play-button img.button-icon {
-    width: 50%; /* Adjusts dynamically */
+    width: 50%;
     height: 50%;
 }
 
@@ -128,14 +130,14 @@ body {
 /* Media Queries for smaller devices */
 @media (max-width: 768px) {
     .main-header {
-        font-size: 24px; /* Smaller header for smaller devices */
-        margin-top: 10px;
+        font-size: 24px;
+        margin: 5px 0;
     }
 
     .video-player {
-        width: 90%; /* Scales to fit smaller screens */
+        width: 90%; /* Fits smaller screens */
         height: auto; /* Maintains aspect ratio */
-        max-height: 700px; /* Ensures video isn't too large */
+        max-height: 50vh; /* Limits video height */
     }
 
     .play-button {
