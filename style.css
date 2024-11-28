@@ -3,23 +3,23 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cinzel', serif;
-    background-image: url('wallpaper.jpg'); /* Replace with your image filename */
+    background-image: url('wallpaper.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Distributes elements evenly */
-    overflow: hidden; /* Prevent scrolling */
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 /* Header text styles */
 .main-header {
-    margin: 10px 0; /* Adjusted margin */
-    font-size: 48px; /* Restored original size */
+    margin: 10px 0;
+    font-size: 48px;
     font-weight: 700;
     text-align: center;
     color: transparent;
@@ -29,12 +29,44 @@ body {
         0 1px 0 #FFD700,
         1px 0 0 #FFD700,
         0 -1px 0 #FFD700;
-    background: linear-gradient(45deg, #857c48, #FF8C00);
+    background: black;
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
-    max-width: 90%; /* Prevents text overflow */
+    max-width: 90%;
+}
+
+.sub-header {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Placeholder styles */
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55vh; /* Matches video size */
+}
+
+.rotating-image {
+    width: 30%;
+    height: auto;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Video container styles */
@@ -42,15 +74,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%; /* Fits within the screen width */
-    height: 55vh; /* Dynamically takes up 55% of the viewport height */
+    width: 90%;
+    height: 55vh; /* Matches placeholder size */
+    position: relative;
 }
 
 .video-player {
-    width: auto; /* Adjusts width dynamically to maintain aspect ratio */
-    height: 100%; /* Fills the container height */
-    max-width: 400px; /* Prevents excessive width */
-    max-height: 700px; /* Prevents excessive height */
+    display: none; /* Hidden by default */
+    width: auto;
+    height: 100%;
+    max-width: 400px;
+    max-height: 700px;
     border: 3px solid #FFD700;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
@@ -58,13 +92,13 @@ body {
 
 /* Button row styles */
 .button-row {
-    margin: 10px 0; /* Adjusted margin */
+    margin: 10px 0;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensures buttons are centered and visible */
-    flex-wrap: wrap; /* Wraps buttons if needed */
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 /* Play Button */
@@ -117,6 +151,11 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.secondary-button i {
+    font-size: 24px;
+    color: white;
+}
+
 .secondary-button:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 1);
@@ -125,29 +164,4 @@ body {
 .secondary-button:active {
     transform: scale(0.95);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 200, 0, 0.8);
-}
-
-/* Media Queries for smaller devices */
-@media (max-width: 768px) {
-    .main-header {
-        font-size: 24px;
-        margin: 5px 0;
-    }
-
-    .video-player {
-        width: 90%; /* Fits smaller screens */
-        height: auto; /* Maintains aspect ratio */
-        max-height: 50vh; /* Limits video height */
-    }
-
-    .play-button {
-        width: 80px;
-        height: 80px;
-    }
-
-    .secondary-button {
-        width: 60px;
-        height: 60px;
-        font-size: 12px;
-    }
 }

@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Not Major</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
         Not Major: Major for poor Degrees
+        <div class="sub-header">ca</div>
     </header>
 
-    <!-- Video Section -->
+    <!-- Rotating Placeholder and Video Section -->
     <div class="video-container">
-        <video id="video" class="video-player" width="500" height="700" muted>
+        <div id="placeholder" class="placeholder">
+            <img src="./crooked_star.png" alt="Rotating Image" class="rotating-image">
+        </div>
+        <video id="video" class="video-player" muted>
             <source src="video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -26,7 +30,9 @@
         <button id="playButton" class="play-button">
             <img src="./crooked_star.png" alt="Play Icon" class="button-icon">
         </button>
-        <a href="https://t.me/yourtelegramchat" class="secondary-button">Telegram</a>
+        <a href="https://t.me/yourtelegramchat" class="secondary-button">
+            <i class="fab fa-telegram"></i>
+        </a>
     </div>
 
     <script src="script.js"></script>
