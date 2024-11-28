@@ -55,7 +55,7 @@ body {
 }
 
 .rotating-image {
-    width: 30%;
+    width: 30%; 
     height: auto;
     animation: rotate 2s linear infinite;
 }
@@ -139,21 +139,17 @@ body {
     border-radius: 50%;
     background: linear-gradient(45deg, #FFD700, #FF8C00);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.7);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-decoration: none;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.secondary-button i {
-    font-size: 24px;
-    color: white;
+.secondary-button img.custom-icon {
+    width: 60%; /* Adjust size of the icon */
+    height: auto;
 }
 
 .secondary-button:hover {
